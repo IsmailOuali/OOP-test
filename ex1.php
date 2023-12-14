@@ -15,12 +15,11 @@
             public $description;
             public $price;
 
-            function setitems($name, $description, $price){
+             function __construct($name, $description, $price){
                 $this->name = $name;
                 $this->description = $description;
-                $this->price = $price;
             }
-            function getname(){
+            protected function getname(){
                 return $this->name;
             }
 
@@ -33,17 +32,54 @@
             }
         }
 
-        $product1 = new product();
-        $product2 = new product();
+
+        class voiture{
+            public $mark;
+            public $engine;
+            public $price;
+
+
+            // function __construct($mark, $engine, $price){
+            //     $this->mark;
+            //     $this->engine;
+            //     $this->price;
+            // }
+
+            function setmark($mark){
+                $this->mark = $mark;
+            }
+
+            function getmark(){
+                return $this->mark;
+            }
+
+            function setengine($engine){
+                $this->engine = $engine;
+            }
+
+            function getengine(){
+                return $this->engine;
+            }
+
+            function setprice($price){
+                $this->price;
+            }
+
+            function getprice(){
+                return $this->price;
+            }
+        }
+
+        $product1 = new product('iPhone 12', 'Latest Apple phones', '799$');
         // $product1->setname('iPhone 12');
         // $product2->setname('iPhone 12 Pro');
-        $product1->setitems('iPhone 12', 'Latest Apple phones', '799$');
-        $product2->setitems('iPhone 12 Pro', 'The big screen model', '980$');
+        
+        $voiture1 = new voiture('Honda', 'V8', '7400$');
+        
     
     ?>
     <div>
-        <p><?php echo $product1->description ?></p>
-        <p><?php echo $product2->price ?></p>
+        <p><?php echo $product1->name ?>: <?php echo $product1->description ?></p>
 
     </div>
 </body>
